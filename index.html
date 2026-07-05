@@ -1,1 +1,53 @@
 <!DOCTYPE html>
+<html lang = "en" class = "scroll-smooth">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = 'width=device-width, initial-scale = 1.0'>
+    <title> Anand Kumar Pankaj </title>
+    <script src = "https://cdn.tailwindcss.com"> </script>
+    <link href = "https://cdnjs.cloudfare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel = "stylesheet">
+    <link href = " https://fonts.googleapis.com/css2?family=Inter:eght@300;400;500;600;700;800&family=jetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['jetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        background: '#030712', // Ultra darsk slate
+                        surface: '#0f172a', // Slate 900
+                        surfaceHighLight: '#1e293b', // Slate 800
+                        primary: '#0e5e9', // Sky 500
+                        textMain: '#f8fafc', 
+                        textMuted: '#94a3b8',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinte',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': {transform: 'translateY(0)'},
+                            '50%': {transform: 'translateY(-10px)'},
+                        }
+                    }
+
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #030712;
+            color: #f8fafc;
+            overflow-x: hidden;
+            
+        }
+    </style>
+
+
+</head>
+</html>
