@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang = "en" class = "scroll-smooth">
+<html lang = "en">
 <head>
     <meta charset = "UTF-8">
     <meta name = "viewport" content = 'width=device-width, initial-scale = 1.0'>
     <title> Anand Kumar Pankaj </title>
+
     <script src = "https://cdn.tailwindcss.com"> </script>
     <link href = "https://cdnjs.cloudfare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel = "stylesheet">
-    <link href = " https://fonts.googleapis.com/css2?family=Inter:eght@300;400;500;600;700;800&family=jetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href = " https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -14,18 +15,18 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        mono: ['jetBrains Mono', 'monospace'],
+                        mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
-                        background: '#030712', // Ultra darsk slate
-                        surface: '#0f172a', // Slate 900
-                        surfaceHighLight: '#1e293b', // Slate 800
-                        primary: '#0e5e9', // Sky 500
-                        textMain: '#f8fafc', 
-                        textMuted: '#94a3b8',
+                        bgDark: '#030712',
+                        panelBg: '#0f172a',
+                        panelHover: '#1e293b',
+                        accentBlue: '#0e5e9',
+                        lightTxt: '#f8fafc',
+                        mutedTxt: '#94a3b8',
                     },
                     animation: {
-                        'float': 'float 6s ease-in-out infinte',
+                        'hover-float': 'float 6s ease-in-out infinte',
                     },
                     keyframes: {
                         float: {
@@ -38,15 +39,92 @@
             }
         }
     </script>
+</head>
+<body class = "selection:bg-accentBlue selection:text-bgDark relative">
+    
+    <canvas id = "bg-canvas"></canvas>
+    
+    <nav class = "fixed w-full z-50 top-0 transition-all duration-300 py-4 flex justofy-center" id = "mainNav">
+        <div class = "w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class = "blur-panel rounded-2xl h-14 flex items-center justify-between px-6 bg-[#0f172a]/90 shadow-sm border border-[#1e293b]">
+                <div class = "flex-shrink-0">
+                    <a href="#" class = "text-xl font-bold tracking-tight text-lightTxt">AKP<span class = "text-accentBlue">.</span></a>
+                </div>
+                <div class = "hidden md:block">
+                    <div class = "flex items-center space-x-2">
+                        <a href= = "#about" class = "px-4 py-2 rounded-lg text-sm font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">About</a>
+                        <a href= = "#projects" class = "px-4 py-2 rounded-lg text-sm font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">Projects</a>
+                        <a href= = "#certifications" class = "px-4 py-2 rounded-lg text-sm font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">Credentials</a>
+                        <a href= = "#achievements" class = "px-4 py-2 rounded-lg text-sm font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">Achievements</a>
+                        <div class = "w-px h-5 bg-white/10 mx-2"></div>
+                        <a href = "Anand Kumar Pankaj Resume.pdf" download class = "px-5 py-1.5 rounded-lg bg-accentBlue/10 text-accentBlue hover:bg-accentBlue hover:text-bgDark transition-colors text-sm font-semibold flex items-center gap-2">
+                             Resume <i class = "fas fa-file-download"></i> 
+                        </a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id = "mobile-toggle" class = "text-mutedTxt hover:text-lightTxt focus:outline-none p-1"></button>
+                         <i class = "fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-    <style>
-        body {
-            background-color: #030712;
-            color: #f8fafc;
-            overflow-x: hidden;
-            
-        }
-    </style>
+        <div id = "mobile-dropdown" class = "hidden absolute top-20 left-4 right-4 md:hidden blur-panel rounded-xl border border-white/10 overflow-hidden shadow-xl bg-[#0f172a]/95 z-50">
+            <div class = "px-4 py-3 space-y-1 text-center">
+                <a href= = "#about" class = "block px-3 py-2.5 rounded-lg text-base font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">About</a>
+                <a href= = "#projects" class = "block px-3 py-2.5 rounded-lg text-base font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">Projects</a>
+                <a href= = "#certifications" class = "block px-3 py-2.5 rounded-lg text-base font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">Credentials</a>
+                <a href= = "#achievements" class = "block px-3 py-2.5 rounded-lg text-base font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">Achievements</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class = "relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
+        <div class = "hero-glow"></div>
+        <div class = "max-w-6xl mx-auto px-6 lg:px-8 realtive z-10 w-full fade-yp is-visible">
+            <div class = "grid lg:grid-cols-12 gap-12 items-center">
+                <div class = "lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
+                    <div class = " inline-flex items-center gap-2  px-3 py-1 rounded-full border border-accentBlue/20 bg-accentBlue/5 text-accentBlue font-mono text-xs fonr-medium mb-8">
+                        <span class = "w-1.5 h-1.5 rounded-full bg-accentBlue"></span>
+                        Engineering Student & Innovator
+                    </div>
+
+                    <h2 class = "text-4xl sm:text-5xl font-bold tracking-tight text-lightTxt mb-1">
+                        Hi, I'm
+                    </h2>
+                    <h1 class = "text-4xl sm:text-5xl font-bold tracking-tight mb-5 leading-tight">
+                        <span class = "text-accentBlue"> Anand Kumar Pankaj.</span>
+                    </h1>
+
+                    <div class = "h-10 sm:h-12 mb-6">
+                        <p class = "text-xl sm:text-2xl text-mutedTxt font-medium flex items-center justify-center lg:justify-start gap-2">
+                            I build <span id = "type-text" class = "font-mono text-accentBlue font-semibold"></span><span class = "animate-pulse font-light">|</span>
+                        </p>
+                    </div>
+
+                    <p class = "text-mutedTxt max-w-xl mb-10 text-lg leading-relaxed">
+                        Passionate about Artificial Intelligence, Embedded Systems, and creating robotic solutions that bridge the gap between software and the physical world.
+                    </p>
+
+                    <div class = "flex flex-wrap justify-center lg;justify-start gap-4">
+                        <a href = "#projects" class = "bg-lightTxt hover:bg-accentBlue text-bgDark font-semibold py-3 px-8 rounded-lg transition-colors duration-300">
+                            Explore My Work
+                        </a>
+                        <a href = "https://linkedin.com/in/akpankaj" target = "_blank" class = "bg-transparent border border-accentBlue/50 text-accentBlue hover:bg-acccentBlue/10 font-medium py-3 px-6 rounded-lg transition-colors duration-300 flex items-center gap-2">
+                            <i class = "fab fa-linkedin text-xl"></i>LinkedIn
+                        </a>
+                        <a href = "https://github.com/solitarysoul04" target = "_blank" class = "bg-transparent border border-[#333] hover:border-accentBlue/50 text-lightTxt font-medium py-3 px-8 rounded-lg transition-colors duration-300 flex items-center gap-2">
+                            <i class = "fab fa-github text-xl"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class 
+            </div>
+        </div>
+    </section>
+</body>
 
 
 </head>
