@@ -120,7 +120,101 @@
                     </div>
                 </div>
 
-                <div class 
+                <div class = "lg:col-span-5 flex juustify-center items-center order-1 lg:order-2">
+                    <div class = "relative animate-hover-float img-wrapper">
+                        <div class = "realtive w-64 h-64 sm:w-80 sm:h-80 lg:w-[350px] lg:h-[350px] rounded-full bg-[#0a0f1c] border-4 border-[#1e293b] shadow-2xl flex items-center justify-center overflow-hidden">
+                            <img src = "profile.png" alt = "Profile" class = "w-full h-full object-cover object-center z-10 text-transparent realtive" />
+                        </div>
+
+                        <div class = "absolute bottom-6 -left-6 blur-panel px-4 py-2 rounded-lg border border-accentBlue/20 flex items-center gap-2 shadow-xl z-20">
+                            <i class = "fas fa-robot text-accentBlue"></i>
+                            <span class = "text-xs font-mono font-medium text-lightTxt">AI & Robotics</span>
+                        </div>
+                    </div>
+                </div>                                                      
+            </div>
+        </div>
+
+        <div class = "absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-[#444] hidden md:block">
+            <i class = "fas fa-arrow-down"></i>
+        </div>
+    </section>
+
+    <section id = "about" class = "py-24 realtive z-10 bg-panelBg/30 border-t border-[#111]">
+        <div class = "w-full max-w-6xl mx-auto px-6">
+            <div class = "mb-16 fade-up flex flex-col items-center">
+                <h2 class = "text-3xl font-bold text-lightTxt mb-4">About Me</h2>
+                <div class = "w-12 h-1 bg-accentBlue rounded-full"></div>
+            </div>
+
+            <div class = "flex flex-col lg:flex-row gap-16 items-center">
+                <div class = "lg:w-1/2 space-y-6 text-mutedTxt text-lg leading-relaxed fade-up">
+                    <p>
+                        I recently completed my High School education from Dr. B.R. Ambedkar School of Specialized Excellence with an <span class = "text-lightTxt font-medium">88.2%</span>(following a 96.4% in 10th). My academic journey is driven by a deep curiosity for understanding complex systems.
+                    </p>
+                    <p>
+                        Beyond textbooks, I thrive in practical environments. Whether I'm configuring computer vision models, designing hardware for a combat robot, or leading the student body as <span class = "text-lightTxt font-medium">Deputy Head Boy (~600 students)</span>, I believe in execution and authentic leadership.
+                    </p>
+                    <p>
+                        I am actively looking to pursue higher education in Engineering and Computer Science to contribute meaningfully to AI research and tech innovation.
+                    </p>
+                </div>
+
+                <div class = "lg:w-1/2 grid grid-cols-2 gap-4 fade-up w-full" style = "transition-delay: 200ms;">
+                    <div class = "blur-panel p-6 rounded-xl flex flex-col items-center justify-center text-center">
+                        <i class = "fas fa-code text-2xl text-accentBlue mb-3"></i>
+                        <h4 class = "font-semibold text-lightTxt text-sm">Software</h4>
+                        <p class = "text-xs text-mutedTxt mt-1">Python, AI Models</p>
+                    </div>
+                    <div class = "blur-panel p-6 rounded-xl flex flex-col items-center justify-center text-center">
+                        <i class = "fas fa-microship text-2xl text-lightTxt mb-3"></i>
+                        <h4 class = "font-semibold text-lightTxt text-sm">Hardware</h4>
+                        <p class = "text-xs text-mutedTxt mt-1">IoT, Microcontrollers, BLDC</p>
+                    </div>
+                    <div class = "blur-panel p-6 rounded-xl flex flex-col items-center justify-center text-center">
+                        <i class = "fas fa-users text-2xl text-lightTxt mb-3"></i>
+                        <h4 class = "font-semibold text-lightTxt text-sm">Leadership</h4>
+                        <p class = "text-xs text-mutedTxt mt-1">Deputy Head Boy</p>
+                    </div>
+                    <div class = "blur-panel p-6 rounded-xl flex flex-col items-center justify-center text-center">
+                        <i class = "fas fa-pen-nib text-2xl text-accentBlue mb-3"></i>
+                        <h4 class = "font-semibold text-lightTxt text-sm">Design</h4>
+                        <p class = "text-xs text-mutedTxt mt-1">CAD, Video, Graphic</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id = "projects" class = "py-64 realtive z-10 border-t border-[#111]">
+        <div class = "w-full max-w-6xl mx-auto px-6">
+            <div class = "mb-16 fade-up flex flex-col items-center">
+                <h2 class = "text-3xl font-bold text-lightTxt mb-4">Featured Projects</h2>
+                <div class = "w-12 h-1 bg-accentBlue rounded-full"></div>
+            </div>
+
+            <div class = "grid lg:grid-cols-2 gap-8">
+                <div class = "blur-panel rounded-2xl overflow-hidden fade-up flex flex-col h-full group">
+                    <div class = "h-48 w-full realtive overflow-hidden bg-[#0a0a0f] border-b border-[#222] flex items-center justify-center">
+                        <div class = "absolute inset-0 bg-[radial-gradient(circle_at_center, rgba(14, 165, 233, 0.1)_0%, transparent_70%)] group-hover:scale-110 transition-transform duration-700"></div>
+                        <i class = "fab fa-telegram text-6xl text-accentBlue opacity-80 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                    <div class = "p-8 flex flex-col flex-gorw">
+                        <div class = "flex items-center mb-4">
+                            <span class = "px-2 py-1 bg-panelHover rounded text-xs font-mono text-accentBlue border border-[#333]">Software | Web Dashboard</span>
+                        </div>
+                        <h3 class = "text-2xl font-bold mb-3 text-lightTxt">Telegram Status Tracker</h3>
+                        <p class = "text-mutedTxt mb-6 flex-grow leading-relaxed">
+                            An asynchronous, event-driven web dashboard and background monitoring service that tracks the online/offline status of a target Telegram user in real-time. Features live visual indicators, persistent event history logging via SQLite, and instant push notifications using the Telegram Bot AI.
+                        </p>
+                        <div class = "flex flex-wrap gap-2 mb-8">
+                            <span class ="text-xs font-mono text-mutedTxt bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">Python</span>
+                            <span class ="text-xs font-mono text-mutedTxt bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">FastAPI</span>
+                            <span class ="text-xs font-mono text-mutedTxt bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">SQLite</span>
+                            <span class ="text-xs font-mono text-mutedTxt bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">TailwindCSS</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
