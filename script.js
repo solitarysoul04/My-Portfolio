@@ -21,6 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
             navBar.classList.remove('py-2');
         }
     });
+    
+    const observerOptions = {
+        root: null,
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
 
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
