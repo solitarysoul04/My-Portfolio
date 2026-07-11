@@ -1,22 +1,24 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #030712;
-    color: #f8fafc;
+    background-color: #111111;
+    color: #ffffff;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
-.glass-card {
-    background-color: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+.base-card {
+    background-color: #1a1a1a;
+    border: 1px solid #27272a;
     transition: all 0.3s ease;
 }
 
-.glass-card:hover {
+.base-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(14, 165, 233, 0.4);
-    box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.15);
+    border-color: #fbbf24;
+    box-shadow: 0 10px 30px -10px rgba(251, 191, 36, 0.15);
 }
 
 .reveal {
@@ -30,32 +32,21 @@ body {
     transform: translateY(0);
 }
 
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #030712; }
-::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: #334155; }
-
-#neural-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -2;
-    pointer-events: none !important;
-    opacity: 0.85; 
+::-webkit-scrollbar { 
+    width: 6px; 
 }
 
-.ambient-glow {
-    position: absolute;
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(14,165,233,0.08) 0%, rgba(3,7,18,0) 60%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    pointer-events: none !important;
+::-webkit-scrollbar-track { 
+    background: #111111; 
+}
+
+::-webkit-scrollbar-thumb { 
+    background: #27272a; 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover { 
+    background: #3f3f46; 
 }
 
 .profile-img-container {
@@ -68,7 +59,7 @@ body {
     position: absolute;
     inset: -4px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #0ea5e9, #333);
+    background: linear-gradient(135deg, #fbbf24, #333333);
     z-index: -1;
     opacity: 0.5;
 }
