@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('year').textContent = new Date().getFullYear();
     const navBar = document.getElementById('mainNav');
-    const toggleBtn = document.getElementById('mobile-toggle');
-    const dropMenu = document.getElementById('mobile-dropdown');
+    const toggleBtn = document.getElementById('mobile-menu-btn');
+    const dropMenu = document.getElementById('mobile-menu');
 
     if (toggleBtn && dropMenu) {
         toggleBtn.addEventListener('click', () => {
@@ -40,12 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.fade-up').forEach(el => {
+    document.querySelectorAll('.reveal').forEach(el => {
         scrollObserver.observe(el);
     });
 
     const wordsToType = ["Robotics Systems", "AI Models", "Embedded Logic & Systems"];
-    const typeTarget = document.getElementById('type-text');
+    const typeTarget = document.getElementById('typewriter');
 
     if (typeTarget) {
         let wordIdx = 0;
