@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = 'width=device-width, initial-scale = 1.0'>
-    <title> Anand Kumar Pankaj </title>
-
-    <script src = "https://cdn.tailwindcss.com"> </script>
-    <link href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity = "sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin = "anonymous" referrerpolicy = "no-referrer" rel = "stylesheet">
-    <link href = " https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anand Kumar Pankaj</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <script>
         tailwind.config = {
             theme: {
@@ -18,251 +17,239 @@
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
-                        bgDark: '#030712',
-                        panelBg: '#0f172a',
-                        panelHover: '#1e293b',
-                        accentBlue: '#0e5e9',
-                        lightTxt: '#f8fafc',
-                        mutedTxt: '#94a3b8',
+                        background: '#030712',
+                        surface: '#0f172a',
+                        surfaceHighlight: '#1e293b',
+                        primary: '#0ea5e9',
+                        textMain: '#f8fafc',
+                        textMuted: '#94a3b8',
                     },
                     animation: {
-                        'hover-float': 'float 6s ease-in-out infinte',
+                        'float': 'float 6s ease-in-out infinite',
                     },
                     keyframes: {
                         float: {
-                            '0%, 100%': {transform: 'translateY(0)'},
-                            '50%': {transform: 'translateY(-10px)'},
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
                         }
                     }
-
                 }
             }
         }
     </script>
 </head>
-<body class="bg-bgDark text-lightTxt antialiased selection:bg-accentBlue selection:text-bgDark relative">
-    
-    <canvas id = "bg-canvas"></canvas>
-    
-    <nav class = "fixed w-full z-50 top-0 transition-all duration-300 py-4 flex justofy-center" id = "mainNav">
-        <div class = "w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div class = "blur-panel rounded-2xl h-14 flex items-center justify-between px-6 bg-[#0f172a]/90 shadow-sm border border-[#1e293b]">
-                <div class = "flex-shrink-0">
-                    <a href="#" class = "text-xl font-bold tracking-tight text-lightTxt">AKP<span class = "text-accentBlue">.</span></a>
+<body class="bg-background text-textMain antialiased selection:bg-primary selection:text-background relative">
+    <canvas id="neural-canvas"></canvas>
+
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 py-4 flex justify-center" id="navbar">
+        <div class="w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-2xl h-14 flex items-center justify-between px-6 bg-[#0f172a]/90 shadow-sm border border-[#1e293b]">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold tracking-tight text-textMain">AKP<span class="text-primary">.</span></a>
                 </div>
-                <div class = "hidden md:block">
-                    <div class = "flex items-center space-x-2">
-                        <a href= = "#about" class = "px-4 py-2 rounded-lg text-sm font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">About</a>
-                        <a href= = "#projects" class = "px-4 py-2 rounded-lg text-sm font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">Projects</a>
-                        <a href= = "#certifications" class = "px-4 py-2 rounded-lg text-sm font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">Credentials</a>
-                        <a href= = "#achievements" class = "px-4 py-2 rounded-lg text-sm font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">Achievements</a>
-                        <div class = "w-px h-5 bg-white/10 mx-2"></div>
-                        <a href = "Anand Kumar Pankaj Resume.pdf" download class = "px-5 py-1.5 rounded-lg bg-accentBlue/10 text-accentBlue hover:bg-accentBlue hover:text-bgDark transition-colors text-sm font-semibold flex items-center gap-2">
-                             Resume <i class = "fas fa-file-download"></i> 
+                <div class="hidden md:block">
+                    <div class="flex items-center space-x-2">
+                        <a href="#about" class="px-4 py-2 rounded-lg text-sm font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">About</a>
+                        <a href="#projects" class="px-4 py-2 rounded-lg text-sm font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Projects</a>
+                        <a href="#certifications" class="px-4 py-2 rounded-lg text-sm font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Credentials</a>
+                        <a href="#achievements" class="px-4 py-2 rounded-lg text-sm font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Achievements</a>
+                        <div class="w-px h-5 bg-white/10 mx-2"></div>
+                        <a href="Anand Kumar Pankaj Resume.pdf" download class="px-5 py-1.5 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-background transition-colors text-sm font-semibold flex items-center gap-2">
+                            Resume <i class="fas fa-file-download"></i>
                         </a>
                     </div>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button id = "mobile-toggle" class = "text-mutedTxt hover:text-lightTxt focus:outline-none p-1"></button>
-                         <i class = "fas fa-bars text-xl"></i>
+                    <button id="mobile-menu-btn" class="text-textMuted hover:text-textMain focus:outline-none p-1">
+                        <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
-
-        <div id = "mobile-dropdown" class = "hidden absolute top-20 left-4 right-4 md:hidden blur-panel rounded-xl border border-white/10 overflow-hidden shadow-xl bg-[#0f172a]/95 z-50">
-            <div class = "px-4 py-3 space-y-1 text-center">
-                <a href= = "#about" class = "block px-3 py-2.5 rounded-lg text-base font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">About</a>
-                <a href= = "#projects" class = "block px-3 py-2.5 rounded-lg text-base font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">Projects</a>
-                <a href= = "#certifications" class = "block px-3 py-2.5 rounded-lg text-base font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">Credentials</a>
-                <a href= = "#achievements" class = "block px-3 py-2.5 rounded-lg text-base font-medium text-mutedTxt hover:text-lightTxt hover:bg-white/5 transition-colors">Achievements</a>
+        
+        <div id="mobile-menu" class="hidden absolute top-20 left-4 right-4 md:hidden glass-card rounded-xl border border-white/10 overflow-hidden shadow-xl bg-[#0f172a]/95 z-50">
+            <div class="px-4 py-3 space-y-1 text-center">
+                <a href="#about" class="block px-3 py-2.5 rounded-lg text-base font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">About</a>
+                <a href="#projects" class="block px-3 py-2.5 rounded-lg text-base font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Projects</a>
+                <a href="#certifications" class="block px-3 py-2.5 rounded-lg text-base font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Credentials</a>
+                <a href="#achievements" class="block px-3 py-2.5 rounded-lg text-base font-medium text-textMuted hover:text-textMain hover:bg-white/5 transition-colors">Achievements</a>
             </div>
         </div>
     </nav>
 
-    <section class = "relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
-        <div class = "hero-glow"></div>
-        <div class = "max-w-6xl mx-auto px-6 lg:px-8 realtive z-10 w-full fade-yp is-visible">
-            <div class = "grid lg:grid-cols-12 gap-12 items-center">
-                <div class = "lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
-                    <div class = " inline-flex items-center gap-2  px-3 py-1 rounded-full border border-accentBlue/20 bg-accentBlue/5 text-accentBlue font-mono text-xs fonr-medium mb-8">
-                        <span class = "w-1.5 h-1.5 rounded-full bg-accentBlue"></span>
+    <section class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
+        <div class="ambient-glow"></div>
+        <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 w-full reveal active">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary font-mono text-xs font-medium mb-8">
+                        <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
                         Engineering Student & Innovator
                     </div>
-
-                    <h2 class = "text-4xl sm:text-5xl font-bold tracking-tight text-lightTxt mb-1">
+                    <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-textMain mb-1">
                         Hi, I'm
                     </h2>
-                    <h1 class = "text-4xl sm:text-5xl font-bold tracking-tight mb-5 leading-tight">
-                        <span class = "text-accentBlue"> Anand Kumar Pankaj.</span>
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-5 leading-tight">
+                        <span class="text-primary">Anand Kumar Pankaj.</span>
                     </h1>
-
-                    <div class = "h-10 sm:h-12 mb-6">
-                        <p class = "text-xl sm:text-2xl text-mutedTxt font-medium flex items-center justify-center lg:justify-start gap-2">
-                            I build <span id = "type-text" class = "font-mono text-accentBlue font-semibold"></span><span class = "animate-pulse font-light">|</span>
+                    <div class="h-10 sm:h-12 mb-6">
+                        <p class="text-xl sm:text-2xl text-textMuted font-medium flex items-center justify-center lg:justify-start gap-2">
+                            I build <span id="typewriter" class="font-mono text-primary font-semibold"></span><span class="animate-pulse font-light">|</span>
                         </p>
                     </div>
-
-                    <p class = "text-mutedTxt max-w-xl mb-10 text-lg leading-relaxed">
+                    <p class="text-textMuted max-w-xl mb-10 text-lg leading-relaxed">
                         Passionate about Artificial Intelligence, Embedded Systems, and creating robotic solutions that bridge the gap between software and the physical world.
                     </p>
-
-                    <div class = "flex flex-wrap justify-center lg;justify-start gap-4">
-                        <a href = "#projects" class = "bg-lightTxt hover:bg-accentBlue text-bgDark font-semibold py-3 px-8 rounded-lg transition-colors duration-300">
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                        <a href="#projects" class="bg-textMain hover:bg-primary text-background font-semibold py-3 px-8 rounded-lg transition-colors duration-300 relative z-20">
                             Explore My Work
                         </a>
-                        <a href = "https://linkedin.com/in/akpankaj" target = "_blank" class = "bg-transparent border border-accentBlue/50 text-accentBlue hover:bg-acccentBlue/10 font-medium py-3 px-6 rounded-lg transition-colors duration-300 flex items-center gap-2">
-                            <i class = "fab fa-linkedin text-xl"></i>LinkedIn
+                        <a href="https://www.linkedin.com/in/akpankaj/" target="_blank" class="bg-transparent border border-primary/50 text-primary hover:bg-primary/10 font-medium py-3 px-6 rounded-lg transition-colors duration-300 flex items-center gap-2 relative z-20">
+                            <i class="fab fa-linkedin text-xl"></i> LinkedIn
                         </a>
-                        <a href = "https://github.com/solitarysoul04" target = "_blank" class = "bg-transparent border border-[#333] hover:border-accentBlue/50 text-lightTxt font-medium py-3 px-8 rounded-lg transition-colors duration-300 flex items-center gap-2">
-                            <i class = "fab fa-github text-xl"></i> GitHub
+                        <a href="https://github.com/solitarysoul04" target="_blank" class="bg-transparent border border-[#333] hover:border-primary/50 text-textMain font-medium py-3 px-8 rounded-lg transition-colors duration-300 flex items-center gap-2 relative z-20">
+                            <i class="fab fa-github text-xl"></i> GitHub
                         </a>
                     </div>
                 </div>
-
-                <div class = "lg:col-span-5 flex juustify-center items-center order-1 lg:order-2">
-                    <div class = "relative animate-hover-float img-wrapper">
-                        <div class = "realtive w-64 h-64 sm:w-80 sm:h-80 lg:w-[350px] lg:h-[350px] rounded-full bg-[#0a0f1c] border-4 border-[#1e293b] shadow-2xl flex items-center justify-center overflow-hidden">
-                            <img src = "profile.png" alt = "Profile" class = "w-full h-full object-cover object-center z-10 text-transparent realtive" />
+                <div class="lg:col-span-5 flex justify-center items-center order-1 lg:order-2">
+                    <div class="relative animate-float profile-img-container">
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[350px] lg:h-[350px] rounded-full bg-[#0a0f1c] border-4 border-[#1e293b] shadow-2xl flex items-center justify-center overflow-hidden">
+                            <img src="profile.png" alt="Anand Kumar Pankaj" class="w-full h-full object-cover object-center z-10 text-transparent relative" />
                         </div>
-
-                        <div class = "absolute bottom-6 -left-6 blur-panel px-4 py-2 rounded-lg border border-accentBlue/20 flex items-center gap-2 shadow-xl z-20">
-                            <i class = "fas fa-robot text-accentBlue"></i>
-                            <span class = "text-xs font-mono font-medium text-lightTxt">AI & Robotics</span>
+                        <div class="absolute bottom-6 -left-6 glass-card px-4 py-2 rounded-lg border border-primary/20 flex items-center gap-2 shadow-xl z-20">
+                            <i class="fas fa-robot text-primary"></i>
+                            <span class="text-xs font-mono font-medium text-textMain">AI & Robotics</span>
                         </div>
                     </div>
-                </div>                                                      
+                </div>
             </div>
         </div>
-
-        <div class = "absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-[#444] hidden md:block">
-            <i class = "fas fa-arrow-down"></i>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-[#444] hidden md:block">
+            <i class="fas fa-arrow-down"></i>
         </div>
     </section>
 
-    <section id = "about" class = "py-24 realtive z-10 bg-panelBg/30 border-t border-[#111]">
-        <div class = "w-full max-w-6xl mx-auto px-6">
-            <div class = "mb-16 fade-up flex flex-col items-center">
-                <h2 class = "text-3xl font-bold text-lightTxt mb-4">About Me</h2>
-                <div class = "w-12 h-1 bg-accentBlue rounded-full"></div>
+    <section id="about" class="py-24 relative z-10 bg-surface/30 border-t border-[#111]">
+        <div class="w-full max-w-6xl mx-auto px-6">
+            <div class="mb-16 reveal flex flex-col items-center">
+                <h2 class="text-3xl font-bold text-textMain mb-4">About Me</h2>
+                <div class="w-12 h-1 bg-primary rounded-full"></div>
             </div>
-
-            <div class = "flex flex-col lg:flex-row gap-16 items-center">
-                <div class = "lg:w-1/2 space-y-6 text-mutedTxt text-lg leading-relaxed fade-up">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2 space-y-6 text-textMuted text-lg leading-relaxed reveal">
                     <p>
-                        I recently completed my High School education from Dr. B.R. Ambedkar School of Specialized Excellence with an <span class = "text-lightTxt font-medium">88.2%</span>(following a 96.4% in 10th). My academic journey is driven by a deep curiosity for understanding complex systems.
+                        I recently completed my High School education from Dr. B.R. Ambedkar School of Specialized Excellence with an <span class="text-textMain font-medium">88.2%</span> (following a 96.4% in 10th). My academic journey is driven by a deep curiosity for understanding complex systems.
                     </p>
                     <p>
-                        Beyond textbooks, I thrive in practical environments. Whether I'm configuring computer vision models, designing hardware for a combat robot, or leading the student body as <span class = "text-lightTxt font-medium">Deputy Head Boy (~600 students)</span>, I believe in execution and authentic leadership.
+                        Beyond textbooks, I thrive in practical environments. Whether I'm configuring computer vision models, designing hardware for a combat robot, or leading the student body as <span class="text-textMain font-medium">Deputy Head Boy (~600 students)</span>, I believe in execution and authentic leadership.
                     </p>
                     <p>
                         I am actively looking to pursue higher education in Engineering and Computer Science to contribute meaningfully to AI research and tech innovation.
                     </p>
                 </div>
-
-                <div class = "lg:w-1/2 grid grid-cols-2 gap-4 fade-up w-full" style = "transition-delay: 200ms;">
-                    <div class = "blur-panel p-6 rounded-xl flex flex-col items-center justify-center text-center">
-                        <i class = "fas fa-code text-2xl text-accentBlue mb-3"></i>
-                        <h4 class = "font-semibold text-lightTxt text-sm">Software</h4>
-                        <p class = "text-xs text-mutedTxt mt-1">Python, AI Models</p>
+                <div class="lg:w-1/2 grid grid-cols-2 gap-4 reveal w-full" style="transition-delay: 200ms;">
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center">
+                        <i class="fas fa-code text-2xl text-primary mb-3"></i>
+                        <h4 class="font-semibold text-textMain text-sm">Software</h4>
+                        <p class="text-xs text-textMuted mt-1">Python, AI Models</p>
                     </div>
-                    <div class = "blur-panel p-6 rounded-xl flex flex-col items-center justify-center text-center">
-                        <i class = "fas fa-microship text-2xl text-lightTxt mb-3"></i>
-                        <h4 class = "font-semibold text-lightTxt text-sm">Hardware</h4>
-                        <p class = "text-xs text-mutedTxt mt-1">IoT, Microcontrollers, BLDC</p>
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center">
+                        <i class="fas fa-microchip text-2xl text-textMain mb-3"></i>
+                        <h4 class="font-semibold text-textMain text-sm">Hardware</h4>
+                        <p class="text-xs text-textMuted mt-1">IoT, Microcontrollers, BLDC</p>
                     </div>
-                    <div class = "blur-panel p-6 rounded-xl flex flex-col items-center justify-center text-center">
-                        <i class = "fas fa-users text-2xl text-lightTxt mb-3"></i>
-                        <h4 class = "font-semibold text-lightTxt text-sm">Leadership</h4>
-                        <p class = "text-xs text-mutedTxt mt-1">Deputy Head Boy</p>
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center">
+                        <i class="fas fa-users text-2xl text-textMain mb-3"></i>
+                        <h4 class="font-semibold text-textMain text-sm">Leadership</h4>
+                        <p class="text-xs text-textMuted mt-1">Deputy Head Boy</p>
                     </div>
-                    <div class = "blur-panel p-6 rounded-xl flex flex-col items-center justify-center text-center">
-                        <i class = "fas fa-pen-nib text-2xl text-accentBlue mb-3"></i>
-                        <h4 class = "font-semibold text-lightTxt text-sm">Design</h4>
-                        <p class = "text-xs text-mutedTxt mt-1">CAD, Video, Graphic</p>
+                    <div class="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center">
+                        <i class="fas fa-pen-nib text-2xl text-primary mb-3"></i>
+                        <h4 class="font-semibold text-textMain text-sm">Design</h4>
+                        <p class="text-xs text-textMuted mt-1">CAD, Video, Graphic</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id = "projects" class = "py-64 realtive z-10 border-t border-[#111]">
-        <div class = "w-full max-w-6xl mx-auto px-6">
-            <div class = "mb-16 fade-up flex flex-col items-center">
-                <h2 class = "text-3xl font-bold text-lightTxt mb-4">Featured Projects</h2>
-                <div class = "w-12 h-1 bg-accentBlue rounded-full"></div>
+    <section id="projects" class="py-24 relative z-10 border-t border-[#111]">
+        <div class="w-full max-w-6xl mx-auto px-6">
+            <div class="mb-16 reveal flex flex-col items-center">
+                <h2 class="text-3xl font-bold text-textMain mb-4">Featured Projects</h2>
+                <div class="w-12 h-1 bg-primary rounded-full"></div>
             </div>
-
-            <div class = "grid lg:grid-cols-2 gap-8">
-                <div class = "blur-panel rounded-2xl overflow-hidden fade-up flex flex-col h-full group">
-                    <div class = "h-48 w-full realtive overflow-hidden bg-[#0a0a0f] border-b border-[#222] flex items-center justify-center">
-                        <div class = "absolute inset-0 bg-[radial-gradient(circle_at_center, rgba(14, 165, 233, 0.1)_0%, transparent_70%)] group-hover:scale-110 transition-transform duration-700"></div>
-                        <i class = "fab fa-telegram text-6xl text-accentBlue opacity-80 group-hover:opacity-100 transition-opacity"></i>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="glass-card rounded-2xl overflow-hidden reveal flex flex-col h-full group">
+                    <div class="h-48 w-full relative overflow-hidden bg-[#0a0a0f] border-b border-[#222] flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.1)_0%,transparent_70%)] group-hover:scale-110 transition-transform duration-700"></div>
+                        <i class="fab fa-telegram text-6xl text-primary opacity-80 group-hover:opacity-100 transition-opacity"></i>
                     </div>
-                    <div class = "p-8 flex flex-col flex-gorw">
-                        <div class = "flex items-center mb-4">
-                            <span class = "px-2 py-1 bg-panelHover rounded text-xs font-mono text-accentBlue border border-[#333]">Software | Web Dashboard</span>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex items-center mb-4">
+                            <span class="px-2 py-1 bg-surfaceHighlight rounded text-xs font-mono text-primary border border-[#333]">Software | Web Dashboard</span>
                         </div>
-                        <h3 class = "text-2xl font-bold mb-3 text-lightTxt">Telegram Status Tracker</h3>
-                        <p class = "text-mutedTxt mb-6 flex-grow leading-relaxed">
-                            An asynchronous, event-driven web dashboard and background monitoring service that tracks the online/offline status of a target Telegram user in real-time. Features live visual indicators, persistent event history logging via SQLite, and instant push notifications using the Telegram Bot AI.
+                        <h3 class="text-2xl font-bold mb-3 text-textMain">Telegram Status Tracker</h3>
+                        <p class="text-textMuted mb-6 flex-grow leading-relaxed">
+                            An asynchronous, event-driven web dashboard and background monitoring service that tracks the online/offline status of a target Telegram user in real-time. Features live visual indicators, persistent event history logging via SQLite, and instant push notifications using the Telegram Bot API.
                         </p>
-                        <div class = "flex flex-wrap gap-2 mb-8">
-                            <span class ="text-xs font-mono text-mutedTxt bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">Python</span>
-                            <span class ="text-xs font-mono text-mutedTxt bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">FastAPI</span>
-                            <span class ="text-xs font-mono text-mutedTxt bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">SQLite</span>
-                            <span class ="text-xs font-mono text-mutedTxt bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">TailwindCSS</span>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">Python</span>
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">FastAPI</span>
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">SQLite</span>
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">TailwindCSS</span>
                         </div>
-                        <a href = "https://github.com/solitarysoul04/Telegram-Status-Tracker" target="_blank" class = "inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-panelHover hover:bg-accentBlue hover:trxt-bgDark border border-[#333] hover:border-accentBlue transition-colors font-medium text-lightTxt mt-auto">
-                            <i class = "fab fa-github"></i>View Repository
+                        <a href="https://github.com/solitarysoul04/Telegram-Status-Tracker" target="_blank" class="relative z-20 inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-surfaceHighlight hover:bg-primary hover:text-background border border-[#333] hover:border-primary transition-colors font-medium text-textMain mt-auto">
+                            <i class="fab fa-github"></i> View Repository
                         </a>
                     </div>
                 </div>
 
-                <div class = "blur-panel rounded-2xl overflow-hidden fade-up flex flex-col h-full group" style = "transition-delay: 150ms;">
-                    <div class = "h-48 w-full relative overflow-hidden bg-[#0a0a0f] border-b border-[#222] flex items-center justify-center">
-                        <div class = "absolute inset-0 bg-[radial-gradient(circle_at_center, rgba(14, 165, 233, 0.1)_0%, transparent_70%)] group-hover:scale-110 transition-transform duration-700"></div>
-                        <i class = "fas fa-hand-sparkles text-6xl text-accentBlue opacity-80 group-hover:opacity-100 transition-opacity"></i>
+                <div class="glass-card rounded-2xl overflow-hidden reveal flex flex-col h-full group" style="transition-delay: 150ms;">
+                    <div class="h-48 w-full relative overflow-hidden bg-[#0a0a0f] border-b border-[#222] flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.1)_0%,transparent_70%)] group-hover:scale-110 transition-transform duration-700"></div>
+                        <i class="fas fa-hand-sparkles text-6xl text-primary opacity-80 group-hover:opacity-100 transition-opacity"></i>
                     </div>
-                    <div class = "p-8 flex flex-col flex-grow">
-                        <div class = "flex items-center mb-4">
-                            <span class = "px-2 py-1 bg-panelHover rounded text-xs font-mono text-accentBlue border border-[#333]">Software | Computer Vision</span>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex items-center mb-4">
+                            <span class="px-2 py-1 bg-surfaceHighlight rounded text-xs font-mono text-primary border border-[#333]">Software | Computer Vision</span>
                         </div>
-                        <h3 class = "text-2xl font-bold mb-3 text-lightTxt">Iron Hand V2.0</h3>
-                        <p class = "text-mutedTxt mb-6 flex-grow leading-relaxed">
+                        <h3 class="text-2xl font-bold mb-3 text-textMain">Iron Hand V2.0</h3>
+                        <p class="text-textMuted mb-6 flex-grow leading-relaxed">
                             An advanced computer vision application built with Python. It allows users to control system media playback and master volume using real-time hand gestures. Maps complex hand landmarks to dynamic native Windows Audio COM interfaces via Google's MediaPipe and OpenCV.
                         </p>
-                        <div class = "flex flex-wrap gap-2 mb-8">
-                            <span class ="text-xs font-mono text-mutedTxt bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">Python</span>
-                            <span class ="text-xs font-mono text-mutedTxt bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">OpenCV</span>
-                            <span class ="text-xs font-mono text-mutedTxt bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">MediaPipe</span>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">Python</span>
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">OpenCV</span>
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">MediaPipe</span>
                         </div>
-                        <a href = "https://github.com/solitarysoul04/Media-player" target = "_blank" class = "inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-panelHover hover:bg-accentBlue hover:text-bgDark border border-[#333] hover:border-accentBlue transition-colors font-medium text-lightTxt mt-auto">
-                            <i class = "fab fa-github"></i>View Repository
+                        <a href="https://github.com/solitarysoul04/Media-player" target="_blank" class="relative z-20 inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-surfaceHighlight hover:bg-primary hover:text-background border border-[#333] hover:border-primary transition-colors font-medium text-textMain mt-auto">
+                            <i class="fab fa-github"></i> View Repository
                         </a>
                     </div>
                 </div>
 
-                <div class = "blur-panel rounded-2xl overflow-hidden fade-up flex flex-col h-full group" style = "transition-delay: 300ms;">
-                    <div class = "h-48 w-full relative overflow-hidden bg-[#0a0a0f] border-b border-[#222] flex items-center justify-center">
-                        <div class = "absolute inset-0 bg-[radial-gradient(circle_at_center, rgba(255, 255, 255, 0.05)_0%, transparent_70%)] group-hover:scale-110 transition-transform duration-700"></div>
-                        <i class = "fas fa-robot text-6xl text-lightTxt opacity-80 group-hover:opacity-100 transition-opacity"></i>
+                <div class="glass-card rounded-2xl overflow-hidden reveal flex flex-col h-full group" style="transition-delay: 300ms;">
+                    <div class="h-48 w-full relative overflow-hidden bg-[#0a0a0f] border-b border-[#222] flex items-center justify-center">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_70%)] group-hover:scale-110 transition-transform duration-700"></div>
+                        <i class="fas fa-robot text-6xl text-textMain opacity-80 group-hover:opacity-100 transition-opacity"></i>
                     </div>
-                    <div class = "p-8 flex flex-col flex-grow">
-                        <div class = "flex items-center mb-4">
-                            <span class = "px-2 py-1 bg-panelHover rounded text-xs font-mono text-lightTxt border border-[#333]">Hardware | Robotics</span>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex items-center mb-4">
+                            <span class="px-2 py-1 bg-surfaceHighlight rounded text-xs font-mono text-textMain border border-[#333]">Hardware | Robotics</span>
                         </div>
-                        <h3 class ="text-2xl font-bold mb-3 text-lightTxt">Urumi (Combat Bot)</h3>
-                        <p class = "text-mutedtTxt mb-6 flex-grow leading-relaxed">
+                        <h3 class="text-2xl font-bold mb-3 text-textMain">Urumi (Combat Bot)</h3>
+                        <p class="text-textMuted mb-6 flex-grow leading-relaxed">
                             A specialized bot designed for the Delhi Robotics League (Robo Kancha). Features dual-mode operation: 'Attacker' mode uses anti-clockwise rotating BLDC motors to shoot projectiles, while 'Defender' mode blocks arena holes. Incorporates omni-directional wheels.
                         </p>
-                        <div class = "flex flex-wrap gap-2 mb-8">
-                            <span class = "text-xs font-mono text-mutedTxt bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">Microcontrollers</span>
-                            <span class = "text-xs font-mono text-mutedTxt bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">Tinkercad</span>
-                            <span class = "text-xs font-mono text-mutedTxt bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">BLDC Motors</span>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">Microcontrollers</span>
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">Tinkercad</span>
+                            <span class="text-xs font-mono text-textMuted bg-[#0a0a0f] border border-[#222] px-2 py-1 rounded">BLDC Motors</span>
                         </div>
-                        <button diabled class = "inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-[#0a0a0f] border border-[#222] opacity-70 cursor-not-allowed font-medium text-mutedTxt mt-auto">
-                            <i class = "fas fa-wrench"></i> Hardware Build (No Repo)
+                        <button disabled class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-[#0a0a0f] border border-[#222] opacity-70 cursor-not-allowed font-medium text-textMuted mt-auto relative z-20">
+                            <i class="fas fa-wrench"></i> Hardware Build (No Repo)
                         </button>
                     </div>
                 </div>
@@ -270,161 +257,161 @@
         </div>
     </section>
 
-    <section id = "certifications" class = "py-24 relative z-10 bg-panelBg/30 border-t border-[#111]">
-        <div class = "w-full max-w-6xl mx-auto px-6">
-            <div class = "mb-16 fade-up flex flex-col items-center">
-                <h2 class = "text-3xl font-bold text-lightTxt mb-4">Credentials & Licenses</h2>
-                <div class = "w-12 h-1 bg-accentBlue rounded-full"></div>
+    <section id="certifications" class="py-24 relative z-10 bg-surface/30 border-t border-[#111]">
+        <div class="w-full max-w-6xl mx-auto px-6">
+            <div class="mb-16 reveal flex flex-col items-center">
+                <h2 class="text-3xl font-bold text-textMain mb-4">Credentials & Licenses</h2>
+                <div class="w-12 h-1 bg-primary rounded-full"></div>
             </div>
 
-            <div class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class = "blur-panel p-6 rounded-xl fade-up flex flex-col h-full hover:border-accentBlue/30">
-                    <div class = "flex justify-between items-start mb-4 w-full">
-                        <i class = "fab fa-google text-2xl text-mutedTxt"></i>
-                        <span class = "text-xs text-mutedTxt font-mono bg-panelHover px-2 py-1 rounded">2024</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-xl reveal flex flex-col h-full hover:border-primary/30">
+                    <div class="flex justify-between items-start mb-4 w-full">
+                        <i class="fab fa-google text-2xl text-textMuted"></i>
+                        <span class="text-xs text-textMuted font-mono bg-surfaceHighlight px-2 py-1 rounded">2024</span>
                     </div>
-                    <h3 class = "text-lg font-semibold text-lightTxt mb-1">Google AI Essentials</h3>
-                    <p class = "text-accentBlue text-sm mb-4">Gogle via Coursera</p>
-                    <div class = "mt-auto pt-4 border-t border-[#222] w-full">
-                        <p class = "text-xs text-mutedTxt font-mono mb-2">Credentials ID: <span class = "text-lightTxt">LSFYPXX7JUBN</span></p>
-                        <a href = "https://www.coursera.org/account/accomplishments/verify/LSFYPXX7JUBN" target="_blank" class = "text-xs text-accentBlue hover:text-lightTxt flex items-center gap-1 transition-colors"><i class = "fas fa-external-link-alt"></i>Verify Credential</a>
-                    </div>
-                </div>
-
-                <div class = "blur-panel p-6 rounded-xl fade-up flex flex-col h-full hover:border-accentBlue/30" style = "transition-delay: 50ms;">
-                    <div class = "flex justify-between items-start mb-4 w-full">
-                        <i class = "fas fa-brain text-2xl text-mutedTxt"></i>
-                        <span class = "text-xs text-mutedTxt font-mono bg-panelHover px-2 py-1 rounded">2024</span>
-                    </div>
-                    <h3 class = "text-lg font-semibold text-lightTxt mb-1">OpenAI GPTs: Custom Assistants</h3>
-                    <p class = "text-accentBlue text-sm mb-4">Vanderbilt University via Coursera</p>
-                    <div class = "mt-auto pt-4 border-t border-[#222] w-full">
-                        <p class = "text-xs text-mutedTxt font-mono mb-2">Credentials ID: <span class = "text-lightTxt">6583DB4LSQES</span></p>
-                        <a href = "https://www.coursera.org/account/accomplishments/verify/6583DB4LSQES" target = "_blank" class = "text-xs text-accentBlue hover:text-lightTxt flex items-center gap-1 transition-colors"><i class = "fas fa-external-link-alt"></i>Verify Credential</a>
+                    <h3 class="text-lg font-semibold text-textMain mb-1">Google AI Essentials</h3>
+                    <p class="text-primary text-sm mb-4">Google via Coursera</p>
+                    <div class="mt-auto pt-4 border-t border-[#222] w-full">
+                        <p class="text-xs text-textMuted font-mono mb-2">Credential ID: <span class="text-textMain">LSFYPXX7JUBN</span></p>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/LSFYPXX7JUBN" target="_blank" class="relative z-20 text-xs text-primary hover:text-textMain flex items-center gap-1 transition-colors"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
                     </div>
                 </div>
 
-                <div class = "blur-panel p-6 rounded-xl fade-up flex flex-col h-full hover:border-accentBlue/30" style = "transition-delay: 100ms;">
-                    <div class = "flex justify-between items-start mb-4 w-full">
-                        <i class = "fas fa-microship text-2xl text-mutedTxt"></i>
-                        <span class = "text-xs text-mutedTxt font-mono bg-panelHover px-2 py-1 rounded">2024</span>
+                <div class="glass-card p-6 rounded-xl reveal flex flex-col h-full hover:border-primary/30" style="transition-delay: 50ms;">
+                    <div class="flex justify-between items-start mb-4 w-full">
+                        <i class="fas fa-brain text-2xl text-textMuted"></i>
+                        <span class="text-xs text-textMuted font-mono bg-surfaceHighlight px-2 py-1 rounded">2024</span>
                     </div>
-                    <h3 class = "text-lg font-semibold text-lightTxt mb-1">8-Week Course in Electronic Systems</h3>
-                    <p class = "text-accentBlue text-sm mb-4">CODE IIT Madras</p>
-                    <div class = "mt-auto pt-4 border-t border-[#222] w-full">
-                        <p class = "text-xs text-mutedTxt font-mono mb-2">Credential ID: <span class = "text-lightTxt">IITM-ES-2024</span></p>
-                        <a href = "https://drive.google.com/file/d/1puPanXtVkzHs6PWWpRN5cpCtfKD2pGV/view?usp=sharing" target = "_blank" class = "text-xs text-accentBlue hover:text-lightTxt flex items-center gap-1 transition-colors"><i class = "fas fa-external-link-alt"></i>View Certificate</a>
-                    </div>
-                </div>
-
-                <div class ="blur-panel p-6 rounded-xl fade-up flex flex-col h-full hover:border-accentBlue/30" style = "transition-delay: 150ms;">
-                    <div class = "flex justify-between items-start mb-4 w-full">
-                        <i class = "fab fa-python text-2xl text-mutedTxt"></i>
-                        <span class = "text-xs text-mutedTxt font-mono bg-panelHover px-2 py-1 rounded">2024</span>
-                    </div>
-                    <h3 class = "text-lg font-semibold text-lightTxt mb-1">Crash Course on Python</h3>
-                    <p class = "text-accentBlue text-sm mb-4">Google via Coursera</p>
-                    <div class = "mt-auto pt-4 border-t border-[#222] w-full">
-                        <p class = "text-xs text-mutedTxt font-mono mb-2">Credential ID: <span class = "text-lightTxt">WQJMJWGPQVNR</span></p>
-                        <a href = "https://www.coursera.com/account/accomplishments/verify/WQJMJWGPQVNR" target = "_blank" class = "text-xs text-accentBlue hover:text-lightTxt flex items-center gap-1 transition-colors"><i class = "fas fa-external-link-alt"></i>Verify Credential</a>
+                    <h3 class="text-lg font-semibold text-textMain mb-1">OpenAI GPTs: Custom Assistants</h3>
+                    <p class="text-primary text-sm mb-4">Vanderbilt University via Coursera</p>
+                    <div class="mt-auto pt-4 border-t border-[#222] w-full">
+                        <p class="text-xs text-textMuted font-mono mb-2">Credential ID: <span class="text-textMain">6583DB4LSQES</span></p>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/6583DB4LSQES" target="_blank" class="relative z-20 text-xs text-primary hover:text-textMain flex items-center gap-1 transition-colors"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
                     </div>
                 </div>
 
-                <div class = "blur-panel p-6 rounded-xl fade-up flex flex-col h-full hover:border-accentBlue/30" style = "transition-delay: 200ms;">
-                    <div class = "flex justify-between items-start mb-4 w-full">
-                        <i class = "fas fa-satellite text-2xl text-mutedTxt"></i>
-                        <span class = "text-xs text-mutedTxt font-mono bg-panelHover px-2 py-1 rounded">2025</span>
+                <div class="glass-card p-6 rounded-xl reveal flex flex-col h-full hover:border-primary/30" style="transition-delay: 100ms;">
+                    <div class="flex justify-between items-start mb-4 w-full">
+                        <i class="fas fa-microchip text-2xl text-textMuted"></i>
+                        <span class="text-xs text-textMuted font-mono bg-surfaceHighlight px-2 py-1 rounded">2024</span>
                     </div>
-                    <h3 class = "text-lg font-semibold text-lightTxt mb-1">Remote Sensing Technology</h3>
-                    <p class = "text-accentBlue text-sm mb-4">ISRO (Shiksha Gagan)</p>
-                    <div class = "mt-auto pt-4 border-t border-[#222] w-full">
-                        <p class = "text-xs text-mutedTxt font-mono mb-2">Credential ID: <span class = "text-lightTxt">202378924</span></p>
-                        <span class = "text-xs text-mutedTxt font-medium flex items-center gap-1"><i class = "fas fa-chcek-circle text-accentBlue"></i>Verified</span>
-                    </div>
-                </div>
-
-                <div class ="blur-panel p-6 rounded-xl fade-up flex flex-col h-full hover:border-accentBlue/30" style = "transition-delay: 250ms;">
-                    <div class = "flex justify-between items-start mb-4 w-full">
-                        <i class = "fas fa-university text-2xl text-mutedTxt"></i>
-                        <span class = "text-xs text-mutedTxt font-mono bg-panelHover px-2 py-1 rounded">2025</span>
-                    </div>
-                    <h3 class = "text-lg font-semibold text-lightTxt mb-1">Summer Outreach Camp</h3>
-                    <p class = "text-accentBlue text-sm mb-4">CS^2 IISER Bhopal (On Campus)</p>
-                    <div class = "mt-auto pt-4 border-t border-[#222] w-full">
-                        <p class = "text-xs text-mutedTxt font-mono mb-2">Credential ID: <span class = "text-lightTxt">IISERB/CS2/SOC-2025/020</span></p>
-                        <a href = "https://drive.google.com/file/d/1zrZRFRMDRmeEMDZ6kCX2we90rawQjs4C/view?usp=sharing" target = "_blank" class = "text-xs text-accentBlue hover:text-lightTxt flex items-center gap-1 transition-colors"><i class = "fas fa-external-link-alt"></i>View Certificate</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id = "achievements" class = "py-24 relative z-10 border-y border-[#111]">
-        <div class = "w-full max-w-4xl mx-auto px-6">
-            <div class = "mb-16 fade-up flex flex-col items-center text-center">
-                <h2 class = "text-3xl font-bold text-lightTxt mb-4">Honors & Awards</h2>
-                <div class = "w-12 h-1 bg-accentBlue rounded-full"></div>
-            </div>
-
-            <div class = "space-y-4 w-full">
-                <div class = "blur-panel p-6 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 fade-up w-full border-l-4 border-l-accentBlue">
-                    <div>
-                        <h3 class = "text-lg font-semibold text-lightTxt mb-1">Student of the Year</h3>
-                        <p class = "text-mutedTxt text-sm">Dr. B.R. Ambedkar SOSE - Awarded for overall excellence in academics and leadership.</p>
-                    </div>
-                    <div class = "sm:text-right shrink-0 order-first sm:order-last">
-                        <span class = "px-3 py-1 bg-[#0a0a0f] border border-[#333] rounded text-xs font-mono text-accentBlue">2026</span>
+                    <h3 class="text-lg font-semibold text-textMain mb-1">8-Week Course in Electronic Systems</h3>
+                    <p class="text-primary text-sm mb-4">CODE IIT Madras</p>
+                    <div class="mt-auto pt-4 border-t border-[#222] w-full">
+                        <p class="text-xs text-textMuted font-mono mb-2">Credential ID: <span class="text-textMain">IITM-ES-2024</span></p>
+                        <a href="https://drive.google.com/file/d/1puPanXtVkzHs6PWWpRN5fcpCtfKD2pGV/view?usp=sharing" target="_blank" class="relative z-20 text-xs text-primary hover:text-textMain flex items-center gap-1 transition-colors"><i class="fas fa-external-link-alt"></i> View Certificate</a>
                     </div>
                 </div>
 
-                <div class = "blur-panel p-6 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 fade-up w-full border-l-4 border-l-[#94a3b8]">
-                    <div>
-                        <h3 class = "text-lg font-semibold text-lightTxt mb-1">Silver Honour</h3>
-                        <p classs = "text-mutedTxt text-sm">International Astronomy and Astrophysics Competition (IAAC)</p>
+                <div class="glass-card p-6 rounded-xl reveal flex flex-col h-full hover:border-primary/30" style="transition-delay: 150ms;">
+                    <div class="flex justify-between items-start mb-4 w-full">
+                        <i class="fab fa-python text-2xl text-textMuted"></i>
+                        <span class="text-xs text-textMuted font-mono bg-surfaceHighlight px-2 py-1 rounded">2024</span>
                     </div>
-                    <div class = "sm:text-right shrink-0 order-first sm:order-last">
-                        <span class = "px-3 py-1 bg-[#0a0a0f] border border-[#333] rounded text-xs font-mono text-[#94a3b8]">2025</span>
+                    <h3 class="text-lg font-semibold text-textMain mb-1">Crash Course on Python</h3>
+                    <p class="text-primary text-sm mb-4">Google via Coursera</p>
+                    <div class="mt-auto pt-4 border-t border-[#222] w-full">
+                        <p class="text-xs text-textMuted font-mono mb-2">Credential ID: <span class="text-textMain">WQJMJWGPQVNR</span></p>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/WQJMJWGPQVNR" target="_blank" class="relative z-20 text-xs text-primary hover:text-textMain flex items-center gap-1 transition-colors"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
                     </div>
                 </div>
 
-                <div class = "blur-panel p-6 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 fade-up w-full border-l-4 border-l-[#4ade80]">
-                    <div>
-                        <h3 class = "text-lg font-semibold text-lightTxt mb-1">1st Position - Zonal Skill Exhibition</h3>
-                        <p class = "text-mutedTxt text-sm">Theme: Green Skills for a Sustainable Future</p>
+                <div class="glass-card p-6 rounded-xl reveal flex flex-col h-full hover:border-primary/30" style="transition-delay: 200ms;">
+                    <div class="flex justify-between items-start mb-4 w-full">
+                        <i class="fas fa-satellite text-2xl text-textMuted"></i>
+                        <span class="text-xs text-textMuted font-mono bg-surfaceHighlight px-2 py-1 rounded">2025</span>
                     </div>
-                    <div class = "sm:text-right shrink-0 order-first sm:order-last">
-                        <span class = "px-3 py-1 bg-[#0a0a0f] border border-[#333] rounded text-xs font-mono text-[#4ade80]">2025</span>
+                    <h3 class="text-lg font-semibold text-textMain mb-1">Remote Sensing Technology</h3>
+                    <p class="text-primary text-sm mb-4">ISRO (Shiksha Gagan)</p>
+                    <div class="mt-auto pt-4 border-t border-[#222] w-full">
+                        <p class="text-xs text-textMuted font-mono mb-2">Credential ID: <span class="text-textMain">202378924</span></p>
+                        <span class="text-xs text-textMuted font-medium flex items-center gap-1"><i class="fas fa-check-circle text-primary"></i> Verified</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl reveal flex flex-col h-full hover:border-primary/30" style="transition-delay: 250ms;">
+                    <div class="flex justify-between items-start mb-4 w-full">
+                        <i class="fas fa-university text-2xl text-textMuted"></i>
+                        <span class="text-xs text-textMuted font-mono bg-surfaceHighlight px-2 py-1 rounded">2025</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-textMain mb-1">Summer Outreach Camp</h3>
+                    <p class="text-primary text-sm mb-4">CS² IISER Bhopal (On Campus)</p>
+                    <div class="mt-auto pt-4 border-t border-[#222] w-full">
+                        <p class="text-xs text-textMuted font-mono mb-2">Credential ID: <span class="text-textMain">IISERB/CS2/SOC-2025/020</span></p>
+                        <a href="https://drive.google.com/file/d/1zrZRFRMDRmeEMDZ6kCX2we9OrawQjs4C/view?usp=sharing" target="_blank" class="relative z-20 text-xs text-primary hover:text-textMain flex items-center gap-1 transition-colors"><i class="fas fa-external-link-alt"></i> View Certificate</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class = "bg-bgDark pt-16 pb-8 text-center flex flex-col items-center">
-        <div class = "w-full max-w-4xl px-6 flex flex-col items-center">
-            <h2 class = "text-2xl font-bold text-lightTxt mb-4">Let's Connect</h2>
-            <p class = "text-mutedTxt mb-8 max-w-md mx-auto text-sm text-center">
-                Open to university oppourtunities, internships, and collaborative prjects in AI and Robotics.
+    <section id="achievements" class="py-24 relative z-10 border-y border-[#111]">
+        <div class="w-full max-w-4xl mx-auto px-6">
+            <div class="mb-16 reveal flex flex-col items-center text-center">
+                <h2 class="text-3xl font-bold text-textMain mb-4">Honours & Awards</h2>
+                <div class="w-12 h-1 bg-primary rounded-full"></div>
+            </div>
+
+            <div class="space-y-4 w-full">
+                <div class="glass-card p-6 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 reveal w-full border-l-4 border-l-primary">
+                    <div>
+                        <h3 class="text-lg font-semibold text-textMain mb-1">Student of the Year</h3>
+                        <p class="text-textMuted text-sm">Dr. B.R. Ambedkar SOSE — Awarded for overall excellence in academics and leadership.</p>
+                    </div>
+                    <div class="sm:text-right shrink-0 order-first sm:order-last">
+                        <span class="px-3 py-1 bg-[#0a0a0f] border border-[#333] rounded text-xs font-mono text-primary">2026</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 reveal w-full border-l-4 border-l-[#94a3b8]">
+                    <div>
+                        <h3 class="text-lg font-semibold text-textMain mb-1">Silver Honour</h3>
+                        <p class="text-textMuted text-sm">International Astronomy and Astrophysics Competition (IAAC)</p>
+                    </div>
+                    <div class="sm:text-right shrink-0 order-first sm:order-last">
+                        <span class="px-3 py-1 bg-[#0a0a0f] border border-[#333] rounded text-xs font-mono text-[#94a3b8]">2025</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 reveal w-full border-l-4 border-l-[#4ade80]">
+                    <div>
+                        <h3 class="text-lg font-semibold text-textMain mb-1">1st Position - Zonal Skill Exhibition</h3>
+                        <p class="text-textMuted text-sm">Theme: Green Skills for a Sustainable Future</p>
+                    </div>
+                    <div class="sm:text-right shrink-0 order-first sm:order-last">
+                        <span class="px-3 py-1 bg-[#0a0a0f] border border-[#333] rounded text-xs font-mono text-[#4ade80]">2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-background pt-16 pb-8 text-center flex flex-col items-center">
+        <div class="w-full max-w-4xl px-6 flex flex-col items-center">
+            <h2 class="text-2xl font-bold text-textMain mb-4">Let's Connect</h2>
+            <p class="text-textMuted mb-8 max-w-md mx-auto text-sm text-center">
+                Open to university opportunities, internships, and collaborative projects in AI and Robotics.
             </p>
-
-            <div class = "flex justify-center gap-4 mb-10 w-full">
-                <a href = "mailto:anandkumarpankaj787@gmail.com" class = "w-12 h-12 rounded-full blur-panel flex items-center justify-center text-lightTxt hover:text-accentBlue transition-colors">
-                    <i class = "fas fa-envelope text-lg"></i>
+            
+            <div class="flex justify-center gap-4 mb-10 w-full relative z-20">
+                <a href="mailto:anandkumarpankaj787@gmail.com" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-textMain hover:text-primary transition-colors">
+                    <i class="fas fa-envelope text-lg"></i>
                 </a>
-                <a href = "https://www.linkedin.com/in/akpankaj/" target = "_blank" class = "w-12 h-12 rounded-full blur-panel flex items-center justify-center text-lightTxt hover:text-[#0077b5] transition-colors">
-                    <i class = "fab fa-linkedin-in text-lg"></i>
+                <a href="https://www.linkedin.com/in/akpankaj/" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-textMain hover:text-[#0077b5] transition-colors">
+                    <i class="fab fa-linkedin-in text-lg"></i>
                 </a>
-                <a href = "https://github.com/solitarysoul04" target = "_blank" class = "w-12 h-12 rounded-full blur-panel flex items-center justify-center text-lightTxt hover:text-white transition-colors">
-                    <i class ="fab fa-github text-lg"></i>
+                <a href="https://github.com/solitarysoul04" target="_blank" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-textMain hover:text-white transition-colors">
+                    <i class="fab fa-github text-lg"></i>
                 </a>
             </div>
-
-            <p class = "text-[#444] text-xs font-mono">
-                &copy; <span id = "year"></span>Anand Kumar Pankaj. All rights reserved.
+            
+            <p class="text-[#444] text-xs font-mono">
+                &copy; <span id="year"></span> Anand Kumar Pankaj. All rights reserved.
             </p>
         </div>
     </footer>
 
-    <script src = "script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
