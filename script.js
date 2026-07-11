@@ -4,24 +4,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById('mobile-toggle');
     const dropMenu = document.getElementById('mobile-dropdown');
 
-    toggleBtn.addEventListener('click', () => {
-        dropMenu.classList.toggle('hidden');
-    });
+    if (toggleBtn && dropMenu) {
+        toggleBtn.addEventListener('click', () => {
+            dropMenu.classList.toggle('hidden');
+        });
 
-    dropMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => dropMenu.classList.add('hidden'));
-    });
+        dropMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => dropMenu.classList.add('hidden'));
+        });
+    }
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navBar.classList.add('py-2');
-            navBar.classList.remove('py-4');
-        } else {
-            navBar.classList.add('py-4');
-            navBar.classList.remove('py-2');
-        }
+        if (navBar) {
+            if (window.scrollY > 50) {
+                navBar.classList.add('py-2');
+             navBar.classList.remove('py-4');
+            } else {
+                navBar.classList.add('py-4');
+                navBar.classList.remove('py-2');
+            }
+        }    
     });
-    
+
     const observerOptions = {
         root: null,
         threshold: 0.1,
@@ -59,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 charIdx++;
             }
 
-            let typeSpeed = isDeletingText ? 40:100;
+            let typeSpeed = isDeletingText ? 40 : 100;
 
             if (!isDeletingText && charIdx == currentWord.length) {
                 typeSpeed = 2000;
@@ -138,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 dots[i].render();
 
                 for (let j = i; i < dots.length; j++) {
+                    if (!dots[j]) continue;
                     const diffX = dots[i].x - dots[j].x;
                     const diffY = dots[i].y - dots[j].y;
                     const distance = Math.sqrt(diffX * diffX + diffY * diffY);
